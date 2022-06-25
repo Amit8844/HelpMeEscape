@@ -17,8 +17,8 @@ public class Win : MonoBehaviour
     {
         _Door_Anim = gameObject.GetComponent<Animator>();
         _AudioSource = GetComponent<AudioSource>();
-     
         
+
     }
 
    void OnTriggerEnter2D(Collider2D collision)
@@ -29,13 +29,23 @@ public class Win : MonoBehaviour
             Debug.Log("Level Completed");
             _Door_Anim.SetTrigger("Door");
             nextLevel = true;
-            nextLevelPanel.SetActive(true);
+           
 
             _AudioSource.clip = _WinSound;
             _AudioSource.Play();
 
+            
 
+            StartCoroutine(LevelEnd());
+        }
+    }
 
+     IEnumerator LevelEnd()
+    {
+        if(nextLevel == true)
+        {
+            yield return new WaitForSeconds(2f);
+            nextLevelPanel.SetActive(true);
         }
     }
 

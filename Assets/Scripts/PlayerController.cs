@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject ObjectToFollow;
 
-
-
+    private CameraController _CameraController;
+    
 
     private bool doubleJump;
     
@@ -45,14 +45,9 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _AudioSource = GetComponent<AudioSource>();
         _Death_Anim = gameObject.GetComponent<Animator>();
-      
+       _CameraController = FindObjectOfType<CameraController>();    
        
     }
-
-   
-
-
-
     private void Update()
     {
          horizontal = Input.GetAxisRaw("Horizontal");
@@ -72,6 +67,7 @@ public class PlayerController : MonoBehaviour
                 _AudioSource.clip = _JumpSound;
                 _AudioSource.Play();
                 _animator.SetTrigger("Jump");
+                _animator.SetTrigger("Trail");
             }
 
 
@@ -90,8 +86,8 @@ public class PlayerController : MonoBehaviour
       public bool IsGrounded()
     {
       
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    
+        return Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -105,7 +101,9 @@ public class PlayerController : MonoBehaviour
 
             // ObjectToFollow.transform.parent = null;
             Debug.Log("Death2");
+            _CameraController.StopGameSound();
             StartCoroutine(Death());
+            
 
            
            

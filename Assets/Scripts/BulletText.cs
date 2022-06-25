@@ -18,7 +18,7 @@ public class BulletText : MonoBehaviour
 	void Update()
 	{
 		if (bulletAmount > 0)
-			text.text = "Bullet: " + bulletAmount;
+			text.text = "Bullet:-  " + bulletAmount;
 		else
 			text.text = "Out of Bullet!";
 	}

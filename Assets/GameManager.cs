@@ -8,12 +8,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    
+
     CameraController cameraController;
+    
+
+    public GameObject HowToPlayPanel;
 
     private void Start()
     {
-        cameraController = GetComponent<CameraController>();
+        cameraController = FindObjectOfType<CameraController>();
+        
     }
     
    
@@ -25,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame() //Quit Game
     {
-        SceneManager.LoadScene("Start Scene");
+        SceneManager.LoadScene("Start");
     }
 
     public void NextLevel()
@@ -43,8 +47,21 @@ public class GameManager : MonoBehaviour
         else if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
+            cameraController.PlayGameAudio();
         }
     }
+
+    public void HowToPlay()
+    {
+        HowToPlayPanel.SetActive(true);
+    }
+
+    public void StartButton()
+    {
+        SceneManager.LoadScene("Level-1");
+    }
+
+
 
 
 
