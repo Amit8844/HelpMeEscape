@@ -5,21 +5,19 @@ using UnityEngine.UI;
 
 public class BulletText : MonoBehaviour
 {
-	Text text;
+	Text Bullettext;
 	public static int bulletAmount = 0;
 
-	// Use this for initialization
+	
 	void Start()
 	{
-		text = GetComponent<Text>();
+		Bullettext = GetComponent<Text>();
 	}
 
-	// Update is called once per frame
+	
 	void Update()
 	{
-		if (bulletAmount > 0)
-			text.text = "Bullet:-  " + bulletAmount;
-		else
-			text.text = "Out of Bullet!";
-	}
+	
+		Bullettext.text = bulletAmount > 0 ? "Bullet:-  " + bulletAmount : "Out of Bullet!";
+    }
 }

@@ -32,13 +32,24 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if(playerDetected && Input.GetKeyDown(KeyCode.E))
-        {
-            dialogueScript.StartDialogue();
-        }
-        if(playerDetected && Input.GetKeyDown(KeyCode.X))
+        KeyE();
+        KeyX();
+    }
+
+    private void KeyX()
+    {
+        if (playerDetected && Input.GetKeyDown(KeyCode.X))
         {
             dialogueScript.EndDialogue();
         }
     }
+
+    private void KeyE()
+    {
+        if (playerDetected && Input.GetKeyDown(KeyCode.E))
+        {
+            dialogueScript.StartDialogue();
+        }
+    }
+
 }

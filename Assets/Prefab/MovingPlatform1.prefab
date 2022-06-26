@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 3064728742531129820}
   m_Layer: 8
   m_Name: MovingPlatform1
-  m_TagString: MovingPlatform
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

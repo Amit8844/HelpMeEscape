@@ -6,24 +6,24 @@ using TMPro;
 public class Dialogue : MonoBehaviour
 {
     
-    //window
+
     public GameObject window;
-    //Indicator
+   
     public GameObject indicator;
-    //text component
+ 
     public TMP_Text dialogueText;
-    //Dialogue list
+   
     public List<string> dialogues;
-    //writing Speed
+
     public float writingSpeed;
-    //Index on dialogues
     private int index;
-    //character index
     private int charIndex;
-    //started Boolean
     private bool Started;
-    //wait for next boolean
     private bool waitForNext;
+
+
+
+
 
     private void Awake()
     {
@@ -42,7 +42,7 @@ public class Dialogue : MonoBehaviour
     }
 
 
-    //start dialogue
+   
     public void StartDialogue()
     {
         if (Started)
@@ -95,6 +95,7 @@ public class Dialogue : MonoBehaviour
         //Increase the character index
         charIndex++;
         //make sure you have reached the end of the sentance
+
         if(charIndex < currentDialogue.Length)
         {
             //wait X seconds
@@ -119,9 +120,11 @@ public class Dialogue : MonoBehaviour
             waitForNext = false;
             index++;
          }
+
         
+
         //check if we are in the scope for dialogue List
-        if(index < dialogues.Count)
+        if (index < dialogues.Count)
         {
             //If so fetch the next dialogue
             GetDialogue(index);

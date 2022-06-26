@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void QuitGame() //Quit Game
+    public void QuitGame() 
     {
         SceneManager.LoadScene("Start");
     }
@@ -39,19 +39,14 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        if (Time.timeScale == 1)
-        {
-            Time.timeScale = 0;
-            cameraController.StopGameSound();
-        }
-        else if (Time.timeScale == 0)
-        {
-            Time.timeScale = 1;
-            cameraController.PlayGameAudio();
-        }
-    }
+        cameraController.PlayGameAudio();
+        Time.timeScale = Time.timeScale == 1 ? 0  : 1;
+        cameraController.StopGameSound();
+       
 
-    public void HowToPlay()
+        
+    }
+     public void HowToPlay()
     {
         HowToPlayPanel.SetActive(true);
     }

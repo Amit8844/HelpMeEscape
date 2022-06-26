@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-     public GameObject player;
-
-
+    public GameObject player;
+    private Vector3 offset;
     private AudioSource _AudioSource;
+
+
+
     [SerializeField] private AudioClip _GameSound;
 
-    Win win;
-
-    private Vector3 offset;
-     //Start is called before the first frame update
     void Start()
     {
         offset = transform.position - player.transform.position;
@@ -21,12 +19,6 @@ public class CameraController : MonoBehaviour
         PlayGameAudio();
        
     }
-
-   
-
-
-
-    // Update is called once per frame
     void LateUpdate()
     {
 
@@ -34,9 +26,6 @@ public class CameraController : MonoBehaviour
         transform.position = player.transform.position + offset;
         
     }
-
-   
-
     public void PlayGameAudio()
     {
         _AudioSource.clip = _GameSound;
