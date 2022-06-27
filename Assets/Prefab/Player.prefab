@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6399571592689195690}
   - component: {fileID: 6399571592689195693}
   - component: {fileID: 6399571592689195692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6399571593549398495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TurretPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6399571593742448414}
   - component: {fileID: 6399571593742448385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
